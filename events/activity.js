@@ -1,10 +1,17 @@
 const { ActivityType } = require("discord.js");
-
+require("dotenv");
 module.exports = {
   name: "ready",
   once: true,
-  execute(client) {
-    client.user.setActivity("with my goombales", {
+  async execute(client) {
+    const guild = client.guilds.cache.get(process.env.GUILD_ID);
+    if (!guild) return;
+
+    const fetchedMembers = await guild.members.fetch({ withPresences: true });
+    const totalOnline = fetchedMembers.filter(
+      (member) => member.presence?.status === "online"
+    );
+    client.user.setActivity(`with my real ${totalOnline.size} goombales`, {
       type: ActivityType.Playing,
     });
   },
