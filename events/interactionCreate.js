@@ -3,6 +3,33 @@ const { Events, MessageFlags } = require("discord.js");
 module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
+    if (interaction.isButton()) {
+      const roleId = interaction.customId;
+      const member = interaction.member;
+      const role = interaction.guild.roles.cache.get(roleId);
+
+      if (!role) {
+        return interaction.reply({
+          content: "Role not found.",
+          flags: MessageFlags.Ephemeral,
+        });
+      }
+
+      if (member.roles.cache.has(roleId)) {
+        await member.roles.remove(roleId);
+        await interaction.reply({
+          content: `Removed role: ${role.name}`,
+          flags: MessageFlags.Ephemeral,
+        });
+      } else {
+        await member.roles.add(roleId);
+        await interaction.reply({
+          content: `Added role: ${role.name}`,
+          flags: MessageFlags.Ephemeral,
+        });
+      }
+      return;
+    }
     if (!interaction.isChatInputCommand()) return;
 
     const command = interaction.client.commands.get(interaction.commandName);
