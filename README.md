@@ -26,8 +26,8 @@ A feature-rich Discord bot built with [discord.js](https://discord.js.org/) that
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/goombales-bot.git
-   cd goombales-bot
+   git clone https://github.com/yourusername/goombabot.git
+   cd goombabot
    ```
 
 2. **Install dependencies:**
