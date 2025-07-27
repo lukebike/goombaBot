@@ -15,7 +15,6 @@ module.exports = {
     );
 
     const onlineNames = totalOnline.map((member) => member.displayName);
-    console.log(onlineNames);
     client.user.setActivity(`with my real ${totalOnline.size} goombales`, {
       type: ActivityType.Playing,
     });
