@@ -1,15 +1,22 @@
-const { ActivityType } = require("discord.js");
-require("dotenv");
+const { Events, ActivityType, PresenceUpdateStatus } = require("discord.js");
+const onlineStatuses = ["online", "idle", "dnd"];
 module.exports = {
-  name: "ready",
-  once: true,
-  async execute(client) {
-    const guild = client.guilds.cache.get(process.env.GUILD_ID);
+  name: Events.PresenceUpdate,
+  async execute(oldPresence, newPresence) {
+    const client = newPresence.client;
+    const guild = newPresence.guild;
     if (!guild) return;
 
     const fetchedMembers = await guild.members.fetch({ withPresences: true });
 
-    client.user.setActivity(`with my real ${fetchedMembers.size} goombales`, {
+    const totalOnline = fetchedMembers.filter(
+      (member) =>
+        !member.user.bot && onlineStatuses.includes(member.presence?.status)
+    );
+
+    const onlineNames = totalOnline.map((member) => member.displayName);
+    console.log(onlineNames);
+    client.user.setActivity(`with my real ${totalOnline.size} goombales`, {
       type: ActivityType.Playing,
     });
   },
