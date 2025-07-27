@@ -83,8 +83,4 @@ Just run `npm start` after setting up your `.env`.
 - Use the [Azure Tools extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) or the Azure Portal.
 - Set environment variables in App Service > Configuration > Application settings.
 
----
 
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
