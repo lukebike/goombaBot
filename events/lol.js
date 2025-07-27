@@ -26,13 +26,13 @@ module.exports = {
 
     if (!message.content.startsWith("/")) {
       const words = message.content
-        .replace(/[^\w\s]/g, "") // Remove punctuation
+        .replace(/[^\w\s]/g, "")
         .split(/\s+/)
         .filter(
           (word) =>
             Boolean(word) &&
             word !== `<@${message.client.user.id}>` &&
-            (!/^\d+$/.test(word) || word.length <= 2) // Ignore numbers longer than 2 digits
+            (!/^\d+$/.test(word) || word.length <= 2)
         )
         .flatMap((word) => {
           if (word.length > 10) {
