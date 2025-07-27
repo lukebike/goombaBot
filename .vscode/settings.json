@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/56ae42bd-80a3-4bdf-bcbd-dbb2210d91eb/resourceGroups/Goomba/providers/Microsoft.Web/sites/GoombaBot",
+  "appService.deploySubpath": "."
+}
