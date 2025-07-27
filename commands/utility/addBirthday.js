@@ -28,8 +28,7 @@ module.exports = {
 
     const db = await openDB();
     await db.run(
-      "INSERT INTO birthdays (id, name, birthday) VALUES (?,?,?)",
-      interaction.user.id,
+      "INSERT INTO birthdays (name, birthday) VALUES (?,?)",
       name,
       birthday
     );
