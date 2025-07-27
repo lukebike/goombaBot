@@ -45,8 +45,6 @@ module.exports = {
         await db.run("INSERT INTO words (word) VALUES (?)", word);
       }
     }
-
-    // If the bot is mentioned (pinged)
     if (message.mentions.has(message.client.user)) {
       const rows = await db.all("SELECT word FROM words");
       const filteredRows = rows.filter((row) => !/^\d{3,}$/.test(row.word));
