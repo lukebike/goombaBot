@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 require("dotenv").config();
+const openDb = require("./database");
 
 const client = new Client({
   intents: [
@@ -12,6 +13,17 @@ const client = new Client({
     GatewayIntentBits.GuildPresences,
   ],
 });
+
+(async () => {
+  const db = await openDb();
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS birthdays (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      birthday TEXT NOT NULL
+    )
+  `);
+})();
 
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, "commands");
