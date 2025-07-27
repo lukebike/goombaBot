@@ -1,4 +1,8 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const {
+  SlashCommandBuilder,
+  PermissionFlagsBits,
+  MessageFlags,
+} = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -27,7 +31,7 @@ module.exports = {
       return interaction.reply({
         content:
           "Invalid time format. Use YYYY-MM-DDTHH:mm (e.g., 2025-07-27T20:00).",
-        ephemeral: true,
+        flags: MessageFlags.Ephemeral,
       });
     }
     const endTime = new Date(startTime.getTime() + 2 * 60 * 60 * 1000);

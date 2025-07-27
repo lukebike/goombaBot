@@ -8,10 +8,8 @@ module.exports = {
     if (!guild) return;
 
     const fetchedMembers = await guild.members.fetch({ withPresences: true });
-    const totalOnline = fetchedMembers.filter(
-      (member) => member.presence?.status === "online"
-    );
-    client.user.setActivity(`with my real ${totalOnline.size} goombales`, {
+
+    client.user.setActivity(`with my real ${fetchedMembers.size} goombales`, {
       type: ActivityType.Playing,
     });
   },
