@@ -1,6 +1,5 @@
 const { SlashCommandBuilder, MessageFlags } = require("discord.js");
 const openDB = require("../../database");
-const { data } = require("./help");
 
 module.exports = {
   data: new SlashCommandBuilder()
