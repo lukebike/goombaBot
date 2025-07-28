@@ -16,6 +16,9 @@ const emojis = [
   "⛓️",
   "🥀",
   "😭",
+  "🐍",
+  "👳🏿",
+  "😀",
 ];
 module.exports = {
   name: Events.MessageCreate,
