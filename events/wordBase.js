@@ -29,7 +29,7 @@ module.exports = {
 
     if (!message.content.startsWith("/")) {
       const words = message.content
-        .replace(/[^\w\s]/g, "")
+        .replace(/[^\w\s?!]/g, "")
         .split(/\s+/)
         .filter(
           (word) =>
