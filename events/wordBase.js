@@ -1,25 +1,6 @@
 const { Events } = require("discord.js");
 const openDb = require("../database");
-const emojis = [
-  "😂",
-  "🎉",
-  "🔥",
-  "💀",
-  "😎",
-  "👍",
-  "✨",
-  "🥳",
-  "🤖",
-  "❤️",
-  "🍆",
-  "😔",
-  "⛓️",
-  "🥀",
-  "😭",
-  "🐍",
-  "👳🏿",
-  "😀",
-];
+const emojis = require("../emojis");
 module.exports = {
   name: Events.MessageCreate,
   async execute(message) {
