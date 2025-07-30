@@ -65,6 +65,13 @@ const eventFiles = fs
 for (const file of eventFiles) {
   const filePath = path.join(eventsPath, file);
   const event = require(filePath);
+  if (
+    event.name === "birthdaySchedule" &&
+    typeof event.execute === "function"
+  ) {
+    client.once("ready", () => event.execute(client));
+    continue;
+  }
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args));
   } else {
