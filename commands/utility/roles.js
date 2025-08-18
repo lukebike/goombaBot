@@ -11,6 +11,7 @@ const ROLE_IDS = [
   "1392760347391426644", // PEAK
   "1394991974947225640", // Clash Royale
   "1398637667901636720", // League
+  "1404102475023384717", //Outlast
 ];
 
 module.exports = {
