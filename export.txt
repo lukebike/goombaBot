@@ -1,0 +1,25 @@
+[9/13/2025, 2:15:23 AM] ping.
+
+[9/13/2025, 2:47:18 AM] Downtime at 9/13/2025, 2:47:18 AM. Ping time out: 0h 31m 55s.
+
+[9/13/2025, 11:30:05 AM] [ERROR] Failed to send VC join DM: Missing Access
+
+[9/13/2025, 1:18:33 PM] ping.
+
+[9/13/2025, 3:05:44 PM] [LOG] Birthday cron job running at 2025-09-13T13:05:44.182Z
+
+[9/13/2025, 3:05:45 PM] [LOG] Checking birthdays for 9-13 (Stockholm time)
+
+[9/13/2025, 5:45:22 PM] Downtime at 9/13/2025, 5:45:22 PM. Ping time out: 4h 27m 9s.
+
+[9/13/2025, 7:12:09 PM] [ERROR] Failed to delete message 1284891234567890123: Unknown Message
+
+[9/13/2025, 9:18:27 PM] ping.
+
+[9/13/2025, 11:55:18 PM] [LOG] Export complete and file deleted. Export message will be deleted in 5 minutes.
+
+[9/14/2025, 12:00:23 AM] [LOG] Export message deleted after 5 minutes.
+
+[9/14/2025, 1:33:12 AM] [ERROR] Birthday cron job error: Cannot read property 'name' of undefined
+
+[9/14/2025, 2:15:44 AM] Downtime at 9/14/2025, 2:15:44 AM. Ping time out: 4h 42m 32s.

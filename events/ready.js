@@ -11,8 +11,7 @@ module.exports = {
         const guild = client.guilds.cache.get(process.env.GUILD_ID);
         if (!guild) return;
 
-        const members = await guild.members.fetch({ withPresences: true });
-        const onlineCount = members.filter(
+        const onlineCount = guild.members.cache.filter(
           (member) => member.presence?.status === "online" && !member.user.bot
         ).size;
 

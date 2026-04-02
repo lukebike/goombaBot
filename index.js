@@ -11,28 +11,45 @@ const client = new Client({
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
     GatewayIntentBits.GuildPresences,
+    GatewayIntentBits.GuildVoiceStates,
+    GatewayIntentBits.DirectMessages,
   ],
 });
 
 (async () => {
   const db = await openDb();
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS birthdays (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      birthday TEXT NOT NULL
-    )
-  `);
-})();
+  try {
+    await db.exec(`
+      CREATE TABLE IF NOT EXISTS birthdays (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        birthday TEXT NOT NULL
+      )
+    `);
 
-(async () => {
-  const db = await openDb();
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS words (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      word TEXT NOT NULL
-    )
-  `);
+    await db.exec(`
+      CREATE TABLE IF NOT EXISTS words (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        word TEXT NOT NULL
+      )
+    `);
+    await db.exec(`CREATE INDEX IF NOT EXISTS idx_words_word ON words(word)`);
+
+    // Track per-activity usage sessions (e.g., Spotify, games)
+    await db.exec(`
+      CREATE TABLE IF NOT EXISTS activity_sessions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT NOT NULL,
+        activity_name TEXT NOT NULL,
+        activity_type INTEGER NOT NULL,
+        started_at TEXT NOT NULL,
+        ended_at TEXT NOT NULL,
+        duration_ms INTEGER NOT NULL
+      )
+    `);
+  } finally {
+    await db.close();
+  }
 })();
 
 client.commands = new Collection();
@@ -79,3 +96,20 @@ for (const file of eventFiles) {
   }
 }
 client.login(process.env.TOKEN);
+
+// Prevent unhandled errors from crashing the process
+client.on('error', (err) => {
+  try {
+    console.error('Client error:', err);
+  } catch {}
+});
+process.on('unhandledRejection', (reason) => {
+  try {
+    console.error('Unhandled rejection:', reason);
+  } catch {}
+});
+process.on('uncaughtException', (err) => {
+  try {
+    console.error('Uncaught exception:', err);
+  } catch {}
+});

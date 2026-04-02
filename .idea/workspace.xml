@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02749c87-858f-411c-aacb-c58fd77f2766" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/emojis.js" beforeDir="false" afterPath="$PROJECT_DIR$/emojis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/events/activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/askGoomba.js" beforeDir="false" afterPath="$PROJECT_DIR$/events/askGoomba.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/birthdaySchedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/events/birthdaySchedule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/groqChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/groqChat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverdata.db" beforeDir="false" afterPath="$PROJECT_DIR$/serverdata.db" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="34Wko8LOGBCTOG4wSm1Kzfp9Zf6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02749c87-858f-411c-aacb-c58fd77f2766" name="Changes" comment="" />
+      <created>1761336889454</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761336889454</updated>
+      <workItem from="1761336890732" duration="612000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
